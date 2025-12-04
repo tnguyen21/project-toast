@@ -9,7 +9,7 @@ import { useToast } from "../ToastProvider";
 const VARIANT_OPTIONS = ["notice", "warning", "success", "error"];
 
 function ToastPlayground() {
-  const [msg, setMsg] = React.useState("default");
+  const [msg, setMsg] = React.useState("");
   const [toastType, setToastType] = React.useState("notice");
   const { createToast } = useToast();
 
