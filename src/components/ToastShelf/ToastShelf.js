@@ -2,8 +2,11 @@ import React from "react";
 
 import Toast from "../Toast";
 import styles from "./ToastShelf.module.css";
+import { useToast } from "../ToastProvider";
 
-function ToastShelf({ toasts, handleDismiss }) {
+function ToastShelf() {
+  const { toasts, dismissToast } = useToast();
+
   return (
     <ol className={styles.wrapper}>
       {toasts.map(({ id, msg, type }) => (
@@ -11,7 +14,7 @@ function ToastShelf({ toasts, handleDismiss }) {
           <Toast
             msg={msg}
             type={type}
-            handleDismiss={() => handleDismiss(id)}
+            handleDismiss={() => dismissToast(id)}
           />
         </li>
       ))}
